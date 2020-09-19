@@ -18,6 +18,10 @@ public class Conexion {
 
     public Conexion() {}
 
+    /**
+     * Conecta con la DB y le añade un dato
+     * @param cadena cadena a añadir
+     */
     public void addData(String cadena) {
 
         ArrayList<Data> data = new ArrayList<Data>();
@@ -47,6 +51,10 @@ public class Conexion {
         }
     }
 
+    /**
+     * Conecta con la DB y obtiene todos los datos de ella
+     * @return JSON con los datos almacenados
+     */
     public JSONObject getAllData() {
         
         JSONObject myObject = new JSONObject();
@@ -90,6 +98,11 @@ public class Conexion {
         return myObject;
     }
     
+    /**
+     * Filtra y reorganiza los ultimos diez datos
+     * @param lista todos los datos obtenidos en la consulta a la DB
+     * @return objeto JSON con los ultimos diez datos 
+     */
     public JSONObject lastElements(ArrayList lista){
         int j = 0;
         JSONObject objeto = new JSONObject();

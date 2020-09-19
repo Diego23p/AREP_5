@@ -3,6 +3,10 @@ package edu.escuelaing.arep.Docker;
 import com.mongodb.BasicDBObject;
 import java.util.Date;
 
+/**
+ * Modelo de datos
+ * @author Diego23p
+ */
 public class Data {
 
         private String cadena;
@@ -11,17 +15,29 @@ public class Data {
 	public Data() {
 	}
 
+        /**
+         * Crea in objeto Data
+         * @param cadena cadena a insertar
+         * @param fecha recha de insersión de la cadena
+         */
 	public Data(String cadena, Date fecha) {
 		this.cadena = cadena;
                 this.fecha = fecha;
 	}
 
-	// Transformo un objecto que me da MongoDB a un Objecto Java
-	public Data(BasicDBObject dBObjectFutbolista) {
-		this.cadena = dBObjectFutbolista.getString("cadena");
-		this.fecha = dBObjectFutbolista.getDate("fecha");
+        /** 
+         * Transforma un objecto MongoDB a un objeto Java
+         * @param dBObject objeto MongoDB 
+         */
+	public Data(BasicDBObject dBObject) {
+		this.cadena = dBObject.getString("cadena");
+		this.fecha = dBObject.getDate("fecha");
 	}
 
+        /**
+         * Transforma de objeto Mongo a objeto Data Java 
+         * @return objeto Mongo creado
+         */
 	public BasicDBObject toDBObjectData() {
 
 		// Creamos una instancia BasicDBObject

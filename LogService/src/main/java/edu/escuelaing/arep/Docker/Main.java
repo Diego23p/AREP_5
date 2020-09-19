@@ -6,6 +6,10 @@ import spark.Request;
 import spark.Response;
 import static spark.Spark.*;
 
+/**
+ *
+ * @author Diego23p
+ */
 public class Main {
 
     public static void main(String args[]) {
@@ -16,6 +20,12 @@ public class Main {
 
     }
 
+    /**
+     * Recibe los datos solicitados en el servicio REST por el endpoit /Datos
+     * @param req requerimientos de la solicitud
+     * @param res respuesta al llamado REST
+     * @return Formulario de entrada de la cadena
+     */
     private static String inputDataPage(Request req, Response res) {
         String pageContent
                 = "<!DOCTYPE html>"
@@ -33,6 +43,12 @@ public class Main {
         return pageContent;
     }
     
+    /**
+     * Realiza la solicitud de conexion a la base de datos 
+     * @param req requerimientos de la solicitud
+     * @param res respuesta al llamado REST
+     * @return Objeto JSON con la consulta a DB
+     */
     private static JSONObject resultsPage(Request req, Response res) {
         
         String cadena = req.queryParams("cadena");
@@ -47,6 +63,10 @@ public class Main {
         
     }
 
+    /**
+     * Obtiene el puerto de la variable de entorno
+     * @return la variable de entorno o 35001 por defecto
+     */
     static int getPort() {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));
