@@ -51,6 +51,10 @@ Necesario para crear y ejecutar la imagenes de las aplicaciones desarrolladas:
 Docker version 19.03.12, build 48a66213fe
 ```
 
+Las imagenes generadas están almacenadas en ```diego23p/roundrobin``` y ```diego23p/logservice```
+
+![](/img/3.jpg)
+
 ## Instalación
 
 Para descargar localmente el repositorio se utiliza el comando como sigue:
@@ -91,9 +95,9 @@ http://ec2-54-236-9-109.compute-1.amazonaws.com:20000/Datos
 
 Los tres servicios ```LogService``` se ejecutan por el puerto 35001, 35002 y 35003:
 ```
-http://ec2-54-236-9-109.compute-1.amazonaws.com:35001/Datos
-http://ec2-54-236-9-109.compute-1.amazonaws.com:35002/Datos
-http://ec2-54-236-9-109.compute-1.amazonaws.com:35003/Datos
+http://ec2-54-236-9-109.compute-1.amazonaws.com:35001/Resultados?cadena=<cadena>
+http://ec2-54-236-9-109.compute-1.amazonaws.com:35002/Resultados?cadena=<cadena>
+http://ec2-54-236-9-109.compute-1.amazonaws.com:35003/Resultados?cadena=<cadena>
 ```
 
 Estos servicios se concentan con una base de datos MongoDB por el puerto 27017 ubicada en la misma máquina virtual:
